@@ -10,13 +10,13 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(path.join(__dirname, 'public')));
 //express routes
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/index.html'));
+  res.sendFile(path.join(__dirname, 'views/gretch.html'));
 });
 app.get('/about', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/pmo.html'));
+  res.sendFile(path.join(__dirname, 'views/template.html'));
 });
 app.get('*', function(req, res){
-  res.status(404).sendFile(path.join(__dirname, 'views/404.html'));
+  res.status(404).sendFile(path.join(__dirname, 'views/gallery.html'));
 });
 //express server listen
 var server = app.listen(app.get('port'), function(){
